@@ -20,7 +20,7 @@ const firestore = getFirestore();
 const daoRol = firestore.
   collection("Rol");
 const daoAlumno = firestore.
-  collection("Rproducto");
+  collection("Ropa");
 const daoUsuario = firestore.
   collection("Usuario");
 
@@ -33,7 +33,7 @@ export function
     valor) {
   valor = valor || "";
   daoAlumno.
-    orderBy("nombre").
+    orderBy("marca").
     onSnapshot(
       snap => {
         let html = SIN_ALUMNOS;
