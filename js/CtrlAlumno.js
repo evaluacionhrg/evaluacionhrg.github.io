@@ -15,7 +15,7 @@ import {
 
 const daoAlumno =
   getFirestore().
-    collection("Rproducto");
+    collection("Ropa");
 const params =
   new URL(location.href).
     searchParams;
@@ -50,10 +50,10 @@ async function busca() {
           import("./tipos.js").
                   Alumno} */
       const data = doc.data();
-      forma.matricula.value = data.matricula;
-      forma.nombre.value = data.nombre || "";
+      forma.tipo.value = data.tipo;
+      forma.marca.value = data.marca || "";
       forma.telefono.value = data.telefono || "";
-      forma.grupo.value = data.grupo || "";
+      forma.cliente.value = data.cliente || "";
       forma.fecha.value = data.fecha || "";
       forma.addEventListener(
         "submit", guarda);
@@ -76,21 +76,21 @@ async function guarda(evt) {
     evt.preventDefault();
     const formData =
       new FormData(forma);
-    const matricula = getString(
-        formData, "matricula").trim();  
-    const nombre = getString(formData, "nombre").trim();
+    const tipo = getString(
+        formData, "tipo").trim();  
+    const marca = getString(formData, "marca").trim();
     const telefono = getString(formData, "telefono").trim();
-    const grupo = getString(formData, "grupo").trim();
+    const cliente = getString(formData, "cliente").trim();
     const fecha = getString(formData, "fecha").trim();
     /**
      * @type {
         import("./tipos.js").
                 Alumno} */
     const modelo = {
-      matricula, 
-      nombre,
+      tipo, 
+      marca,
       telefono,
-      grupo,
+      cliente,
       fecha
     };
     await daoAlumno.
