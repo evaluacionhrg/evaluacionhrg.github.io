@@ -39,7 +39,7 @@ class MiNav extends HTMLElement {
         html += /* html */
           `<li>
             <a href=
-              "chat.html">Chat</a>
+              "chat.html"> </a>
           </li>`;
       }
       if (roles.has(
@@ -47,7 +47,7 @@ class MiNav extends HTMLElement {
         html += /* html */
           `<li>
             <a href=
-"alumnos.html">Alumnos</a>
+"alumnos.html">Registro de Ropa</a>
           </li>`;
       }
       this.ul.innerHTML += html;
